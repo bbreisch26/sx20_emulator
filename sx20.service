@@ -1,0 +1,13 @@
+[Unit]
+Description=Cisco SX20 Serial Emulator
+After=network.target
+
+[Service]
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
+Environment="DISPLAY=:0.0"
+ExecStart=/usr/bin/python3 /home/pi/sx20_emulator.py
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
